@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hoc js</title>
+</head>
+<body>
+<ul class="list">
+    <li>ex1</li>
+    <li>ex2</li>
+    <li>ex3</li>
+    <li>ex4</li>
+</ul>
+<!-- <script src="./testjs1.js"></script> -->
+<!--<script src="./oject.js"></script> -->
+<!-- <script src="./for.js"></script> -->
+ <!-- <script src="./test02.js"></script> -->
+ <script >
+ var demoId = document.getElementById('demo');
+    var demoClass = document.getElementsByClassName('classdemo')
+    //console.log('class =',demoClass);
+    for (let index = 0; index < demoClass.length; index++) {
+        console.log('phan tu thu ', + index + ' la ',demoClass[index]);        
+    }
+    var arraydemo = Array.from(demoClass);
+    console.log('array of html' , arraydemo);
+    
+    var divelment = document.querySelectorAll('.list li');
+    console.log(divelment);
+
+    var demoClass2 = document.querySelectorAll('.classdemo');
+    // console.log('selectorAll', demoClass2);
+    
+ </script>
+
+ 
+</body>
+</html>

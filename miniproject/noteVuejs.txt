@@ -1,0 +1,19 @@
+- Start API Server: node index.js
+- Đảm bảo đã cài Vue-cli: npm install -g @vue/cli
+- Tạo mới project vơi vue cli: vue create project
+- xóa lint khỏi project (tùy vào project) : 
+    npm remove @vue/cli-plugin-eslint
+- thêm router : vue add router
+- xử lí master layout
+- Validate Form
+- Goi API
+  * install vue Axios (để kết nối dữ liệu trogn vue) :
+     npm install --save axios vue-axios
+  hiển thị danh sách sản phẩm
+- Function check number Validate vue :
+    isNumber(value) {
+        return /^\d*$/.test(value);
+    }
+- thêm chức năng confirm trong vue 
+    npm install -S vue-sweetalert2
+    website : https://sweetalert2.github.io/#examples

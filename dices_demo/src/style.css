@@ -1,0 +1,354 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #333;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+img {
+  height: auto;
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #42b983;
+}
+.d_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contents {
+  /* background: #fff; */
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 1000px;
+  position: relative;
+}
+
+.main_game {
+  background: url(../dist/img/dicebgjpg.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.main_game h1 {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 60px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* player */
+.player_panel {
+  width: 30%;
+}
+.player_name {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: cursive;
+  text-align: center;
+  opacity: 0.7;
+}
+.player_name ion-icon {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-top: 7px;
+}
+.active .player_name {
+  opacity:1;
+  color: aqua;
+}
+
+.winner .player_name {
+  color: chartreuse;
+}
+.player_score {
+  font-size: 80px;
+  color: red;
+  letter-spacing: 2px;
+  line-height: 100px;
+}
+.player_current {
+  background: aliceblue;
+  border-radius: 10px;
+  margin: 200px auto 0;
+  padding: 50px;
+}
+.player_current .current_txt {
+  color: #88aff0;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.player_current .current_score {
+  color: brown;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+/* wrap_controls */
+
+.control {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  width: 300px;
+}
+
+.control button {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.control button:hover {
+  background: cornflowerblue;
+  border-color: cornflowerblue;
+  color: #fff;
+}
+
+.control button.disable {
+  pointer-events: none;
+}
+.control button:focus {
+  outline: none;
+}
+
+.control ion-icon {
+  color: #fff;
+  display: inline-block;
+  vertical-align: text-top;
+  margin:-5px 15px 0 0;
+  height: 30px;
+  width: 30px;
+  transition: margin 0.3s;
+}
+
+.control button:hover ion-icon {
+  color: #fff;
+  margin-right: 20px;
+}
+
+.roll_btn {
+  top: 65%;
+}
+
+.hold_btn {
+  top: 75%;
+}
+
+.final_score {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+}
+
+.final_score input {
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  color: brown;
+  font-size: 24px;
+  line-height: 30px;
+  height: 54px;
+  width: 240px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.final_score input:focus {
+  outline: none;
+}
+
+/* wrap_dices */
+
+.dices {
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+#dice-1 {
+  top: 120px;
+}
+
+#dice-2 {
+  top: 255px;
+}
+
+.spinner > div {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 0;
+  text-align: center;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.spinner .face1 {
+  background: url(../dist/img/dice1.png) no-repeat center center;
+  background-size: cover;
+  transform: translateZ(60px);
+}
+ .spinner .face2 {
+  background: url(../dist/img/dice2.png) no-repeat center center;
+  background-size: cover;
+  transform: translateZ(0px) rotateY(90deg);
+}
+.spinner .face3 {
+  background: url(../dist/img/dice3.png) no-repeat center center;
+  background-size: cover;
+  transform: translateZ(0px) rotateY(90deg) rotateX(90deg);
+}
+.spinner .face4 {
+  background: url(../dist/img/dice4.png) no-repeat center center;
+  background-size: cover;
+  transform: translateZ(60px) rotateY(180deg) rotateZ(90deg);
+}
+.spinner .face5 {
+  background: url(../dist/img/dice5.png) no-repeat center center;
+  background-size: cover;
+  transform: translateZ(0px) rotateY(-90deg) rotateZ(90deg);
+}
+.spinner .face6 {
+  background: url(../dist/img/dice6.png) no-repeat center center;
+  background-size: cover;
+  transform: translateZ(0px) rotateX(-90deg);
+}
+
+.spinner {
+  transform-style: preserve-3d;
+  transform-origin: 60px 60px 0;
+  transition: all 0.9s ease;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.spinner.dice-1 {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.spinner.dice-1 .face1,
+.spinner.dice-2 .face2,
+.spinner.dice-3 .face3 {
+  z-index: 22;
+}
+.spinner.dice-2 {
+  transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+}
+.spinner.dice-3 {
+  transform: rotateX(0deg) rotateY(-90deg) rotateZ(90deg);
+}
+.spinner.dice-4 {
+  transform: rotateX(0deg) rotateY(180deg) rotateZ(90deg);
+}
+.spinner.dice-5 {
+  transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+}
+.spinner.dice-6 {
+  transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg);
+}
+
+.popup {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top :0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup > div {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
+  transform: scale(1.2);
+}
+
+.popup.open > div {
+  transform: scale(1);
+}
+
+.popup > div h2 {
+  color: #88aff0;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popup > div button {
+  cursor: pointer;
+  background: #88aff0;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+.popup > div button:hover {
+  opacity: 0.7;
+}
+
+button {
+  transition: all 0.3s ease;
+}

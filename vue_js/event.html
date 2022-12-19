@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight:  normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+strong {
+    font-weight: bold;
+}
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.content {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+p {
+    margin-bottom: 30px;
+}
+.box {
+    background-color: blueviolet;
+    height: 200px;
+    width: 200px;
+    margin: 20px 0;
+}
+</style>
+</head>
+<body>
+    <div class="content">
+        <div id="app">
+            <p>count: {{ count }}</p>
+            <button v-on:click="countFunc($event, 2)">click me</button>
+            <button v-on:click="countFunc($event, 1)">show me</button>
+            <div class="box" v-on:mousemove="handleMousemove">
+                <p>clientX: {{ clientX }}</p>
+                <p>clientY: {{ clientY }}</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    var eventVue = new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+            clientX: 0,
+            clientY: 0
+        },
+        methods: {
+            countFunc(e , number){
+               // console.log('e.target', e.target);
+                this.count +=number;
+                
+            },
+            handleMousemove(e){
+               // console.log('this', e);
+                this.clientX = e.clientX;
+                this.clientY = e.clientY;
+            }
+        }
+    })
+    </script>
+</body>
+</html>

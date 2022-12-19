@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight:  normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+strong {
+    font-weight: bold;
+}
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.contnent {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+h2,
+h3,
+p {
+    padding-bottom: 20px;
+}
+.fl_item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+}
+.listBlog {
+    margin-bottom: 50px;
+}
+.cart_btn {
+    margin: 50px 0;
+}
+.cart_btn a {
+    background-color: antiquewhite;
+    display: inline-block;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+}
+.box_product {
+    margin-bottom: 50px;
+}
+.image {
+    width: 45%;
+}
+.image img {
+    width: 100%;
+}
+
+.box_txt {
+    width: 50%;
+}
+
+.price {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price_sale {
+    color: #bbb;
+}
+.price_sale span {
+    border: 1px solid red;
+    display: inline-block;
+    color: #000;
+    width: 50px;
+    text-align: center;
+}
+.color {
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.list_color li {
+    background-color: blue;
+    display: inline-block;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    margin-left: 20px;
+}
+.list_color li:nth-child(2) {
+    background-color: blueviolet;
+}
+.list_color li:nth-child(3) {
+    background-color:yellow;
+}
+.list_color li:nth-child(4) {
+    background-color: pink;
+}
+</style>
+</head>
+<body>
+    <div class="contnent">
+        <h2>Vue JS</h2>
+        <div class="listBlog">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div id="app">
+            <h1> {{ title }}</h1>
+            <h1> {{ title }}</h1>
+            <div class="block_cart">
+                <p class="cart_btn"><a href="#">giỏ hàng</a></p>
+                <div class="box_product fl_item">
+                    <div class="image">
+                        <img src="img/img_04.jpg" alt="">
+                    </div>
+                    <div class="box_txt">
+                        <h2><a v-bind:href='URL' v-bind:target='target'>{{ title }}</a></h2>
+                        <p>Brand: No brand</p>
+                        {{ check ? 'YES' : 'NO' }}
+                        <p class="price">{{ formatPrice() }}</p>
+                        <p class="price_sale">2000 : <span>50%</span></p>
+                        <div class="color fl_item">
+                            <p class="txt"><strong>Màu sắc :</strong> </p>
+                            <ul class="list_color fl_item">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- box_product -->
+                <h2><strong>Mô tả</strong></h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div><!-- block_cart -->
+        </div><!-- app -->
+    </div><!-- content -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="main.js"></script>
+</html>

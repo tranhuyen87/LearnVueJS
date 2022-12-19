@@ -1,0 +1,7 @@
+1. development
+    -Babel: 
+        + trinh bien dich tu es6 thanh es5
+    -webpack:
+        là công cụ giúp đóng gói code, đóng gói mã nguồn.
+        sau khi chay npm run buil sẽ hiển thị code đã dc minifile
+2.production
